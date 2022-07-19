@@ -98,12 +98,12 @@ debugGridCoordinates = [
 ];
 
 // Populate the coordinates with the grid data
-for (var ii = 1; ii < gridWidth + 1; ii++) {
-	for(var jj = 1; jj < gridHeight + 1; jj++) {
-			debugGridCoordinates[ii][jj][0] = x + (jj * 31); // x1
-			debugGridCoordinates[ii][jj][1] = y + (ii * 31); // y1
-			debugGridCoordinates[ii][jj][2] = x + (jj * 31) + 30; // x2
-			debugGridCoordinates[ii][jj][3] = y + (ii * 31) + 30; // y2
+for (var ii = 0; ii < gridWidth; ii++) {
+	for(var jj = 0; jj < gridHeight; jj++) {
+		debugGridCoordinates[ii][jj][0] = (x + (jj * 31)) + 32; // x1
+		debugGridCoordinates[ii][jj][1] = (y + (ii * 31)) + 32; // y1
+		debugGridCoordinates[ii][jj][2] = (x + (jj * 31) + 30) + 32; // x2
+		debugGridCoordinates[ii][jj][3] = (y + (ii * 31) + 30) + 32; // y2
 	}
 }
 

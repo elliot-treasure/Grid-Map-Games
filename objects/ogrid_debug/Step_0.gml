@@ -9,7 +9,9 @@ frame += delta_time/1000000;
 // If we have clicked inside of a region then we want to make a change to said region
 
 // If they have clicked inside of the box then we want to change the cooresponding boxes information
-if (mouse_check_button_pressed(mb_left)) {
+var _mbLeft = mouse_check_button_pressed(mb_left);
+var _mbRight = mouse_check_button_pressed(mb_right);
+if (_mbLeft || _mbRight) {
 	/*
 		Overview
 			We could setup indexes for which row is which, but that's a bit overkill for the scope of this game
@@ -19,19 +21,25 @@ if (mouse_check_button_pressed(mb_left)) {
 	*/
 	
 	// If we are not within the range then we're done here
-	if (mouse_x < debugGridCoordinates[0][0][0] || mouse_x > debugGridCoordinates[7][7][2]) { 
+	if (mouse_x < debugGridCoordinates[0][0][0] || // x1
+		mouse_x > debugGridCoordinates[7][7][2]) || // x2
+		mouse_y < debugGridCoordinates[0][0][1] || // y1
+		mouse_y > debugGridCoordinates[7][7][3] { // y2
 		show_message("out of bounds");
 		exit; // Notably, this exits the ENTIRE STEP EVENT, in this one specific scenario that's totally OK
 	}
 	
-	for(var i = 1; i < 9; i++) {
-		for(var j = 1; j < 9; j++) {
+	for(var i = 0; i < gridWidth; i++) {
+		for(var j = 0; j < gridHeight; j++) {
 			// checks to see if it's larger than x2, if so move onto the next in the loop
 			if (mouse_x > debugGridCoordinates[i][j][2]) continue;
 			
 			// if it's also larger than x1 we might have a match
 			if (mouse_x > debugGridCoordinates[i][j][0]) {
-				if (mouse_y > debugGridCoordinates[i][j][1]) continue; 	
+				if (mouse_y > debugGridCoordinates[i][j][1] && mouse_y < debugGridCoordinates[i][j][3]) {
+					if (_mbLeft) debugGrid[i][j] = debugGrid[i][j] == 1? 0 : 1;
+					if (_mbRight) debugGrid[i][j] = 2;
+				}
 			}
 			
 		}

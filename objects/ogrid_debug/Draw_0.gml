@@ -2,7 +2,13 @@
 
 for (var ii = 1; ii < gridWidth+1; ii++) {
 	for(var jj = 1; jj < gridHeight+1; jj++) {
-		var _color = debugGrid[ii-1,jj-1] == 1 ? c_green : c_blue;
+		var _color = debugGrid[ii-1,jj-1];
+		
+		switch(_color) {
+			case 0: _color = c_green; break;	
+			case 1: _color = c_blue; break;	
+			case 2: _color = c_red; break;	
+		}
 		
         draw_rectangle_color(
 			x + (jj * 31), // x1

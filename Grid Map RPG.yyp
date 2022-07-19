@@ -1,8 +1,10 @@
 {
   "resources": [
+    {"id":{"name":"sprCursor","path":"sprites/sprCursor/sprCursor.yy",},"order":0,},
     {"id":{"name":"oGrid_minesweeper","path":"objects/oGrid_minesweeper/oGrid_minesweeper.yy",},"order":0,},
     {"id":{"name":"rmMinesweeper","path":"rooms/rmMinesweeper/rmMinesweeper.yy",},"order":0,},
     {"id":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},"order":2,},
+    {"id":{"name":"oMouse","path":"objects/oMouse/oMouse.yy",},"order":4,},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},"order":0,},
     {"id":{"name":"oGrid_debug","path":"objects/oGrid_debug/oGrid_debug.yy",},"order":0,},
     {"id":{"name":"rmGrid_debug","path":"rooms/rmGrid_debug/rmGrid_debug.yy",},"order":0,},
