@@ -1,8 +1,11 @@
 {
   "resources": [
+    {"id":{"name":"oGrid_minesweeper","path":"objects/oGrid_minesweeper/oGrid_minesweeper.yy",},"order":0,},
+    {"id":{"name":"rmMinesweeper","path":"rooms/rmMinesweeper/rmMinesweeper.yy",},"order":0,},
+    {"id":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},"order":2,},
     {"id":{"name":"oGame","path":"objects/oGame/oGame.yy",},"order":0,},
-    {"id":{"name":"oGrid","path":"objects/oGrid/oGrid.yy",},"order":1,},
-    {"id":{"name":"rmMain","path":"rooms/rmMain/rmMain.yy",},"order":0,},
+    {"id":{"name":"oGrid_debug","path":"objects/oGrid_debug/oGrid_debug.yy",},"order":0,},
+    {"id":{"name":"rmGrid_debug","path":"rooms/rmGrid_debug/rmGrid_debug.yy",},"order":0,},
   ],
   "Options": [
     {"name":"HTML5","path":"options/html5/options_html5.yy",},
@@ -19,7 +22,9 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rmMain","path":"rooms/rmMain/rmMain.yy",},},
+    {"roomId":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},},
+    {"roomId":{"name":"rmGrid_debug","path":"rooms/rmGrid_debug/rmGrid_debug.yy",},},
+    {"roomId":{"name":"rmMinesweeper","path":"rooms/rmMinesweeper/rmMinesweeper.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -36,6 +41,11 @@
     {"folderPath":"folders/Animation Curves.yy","order":12,"resourceVersion":"1.0","name":"Animation Curves","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Notes.yy","order":13,"resourceVersion":"1.0","name":"Notes","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions.yy","order":14,"resourceVersion":"1.0","name":"Extensions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Rooms/Testing.yy","order":1,"resourceVersion":"1.0","name":"Testing","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Testing.yy","order":2,"resourceVersion":"1.0","name":"Testing","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Rooms/Games.yy","order":3,"resourceVersion":"1.0","name":"Games","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Games.yy","order":3,"resourceVersion":"1.0","name":"Games","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Games/Minesweeper.yy","order":1,"resourceVersion":"1.0","name":"Minesweeper","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

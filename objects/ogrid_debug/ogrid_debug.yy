@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Testing",
+    "path": "folders/Objects/Testing.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oGrid",
+  "name": "oGrid_debug",
   "tags": [],
   "resourceType": "GMObject",
 }
