@@ -25,7 +25,7 @@ if (_mbLeft || _mbRight) {
 		mouse_x > debugGridCoordinates[7][7][2]) || // x2
 		mouse_y < debugGridCoordinates[0][0][1] || // y1
 		mouse_y > debugGridCoordinates[7][7][3] { // y2
-		show_message("out of bounds");
+		// show_message("out of bounds"); | This is only needed to see if you clicked out of bounds
 		exit; // Notably, this exits the ENTIRE STEP EVENT, in this one specific scenario that's totally OK
 	}
 	

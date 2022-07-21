@@ -100,10 +100,10 @@ debugGridCoordinates = [
 // Populate the coordinates with the grid data
 for (var ii = 0; ii < gridWidth; ii++) {
 	for(var jj = 0; jj < gridHeight; jj++) {
-		debugGridCoordinates[ii][jj][0] = (x + (jj * 31)) + 32; // x1
-		debugGridCoordinates[ii][jj][1] = (y + (ii * 31)) + 32; // y1
-		debugGridCoordinates[ii][jj][2] = (x + (jj * 31) + 30) + 32; // x2
-		debugGridCoordinates[ii][jj][3] = (y + (ii * 31) + 30) + 32; // y2
+		debugGridCoordinates[ii][jj][0] = (x + (jj * 32)) + 32; // x1
+		debugGridCoordinates[ii][jj][1] = (y + (ii * 32)) + 32; // y1
+		debugGridCoordinates[ii][jj][2] = (x + (jj * 32) + 30) + 32; // x2
+		debugGridCoordinates[ii][jj][3] = (y + (ii * 32) + 30) + 32; // y2
 	}
 }
 
