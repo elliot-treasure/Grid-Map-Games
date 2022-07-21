@@ -24,6 +24,11 @@
 */
 #endregion Game Design
 
+// init
+frame = 0;
+x = room_width * 0.25;
+y = room_height * 0.05;
+
 // Total number of mines on the map
 numberOfMines = 5;
 mine = 99; // This is the number on the map to indicate where a mine is
@@ -31,12 +36,34 @@ flags = numberOfMines * 2; // obviously you're not going to win if you're using 
 flagsInUse = 0;
 
 totalGridSpots = 25; // 5x5, simple calculus. Doing it manually is easier but you could make it modular
-mineGrid = [
-	[ 0, 0, 0, 0 ,0 ],
-	[ 0, 0, 0, 0 ,0 ],
-	[ 0, 0, 0, 0 ,0 ],
-	[ 0, 0, 0, 0 ,0 ],
-	[ 0, 0, 0, 0 ,0 ]
-];
+
+gridWidth = 4;
+gridHeight = 4;
+mineGrid[0][0] = 0;
+mineGridCoords[0][0] = 0;
+
+// Init Array based on preset height and width
+for (h = 0; h < gridHeight; h++) {
+	for (w = 0; w < gridWidth; w++) {
+		mineGrid[h][w] = 0;
+	}
+}
+
+// Init Array Coordinates based on preset height and width
+for (h = 0; h < gridHeight; h++) {
+	for (w = 0; w < gridWidth; w++) {
+		mineGridCoords[h][w] = [ 0, 0, 0, 0];
+	}
+}
+
+// Populate the coordinates with the grid data
+for (var ii = 0; ii < gridWidth; ii++) {
+	for(var jj = 0; jj < gridHeight; jj++) {
+		mineGridCoords[ii][jj][0] = (x + (jj * 32)) + 32; // x1
+		mineGridCoords[ii][jj][1] = (y + (ii * 32)) + 32; // y1
+		mineGridCoords[ii][jj][2] = (x + (jj * 32) + 30) + 32; // x2
+		mineGridCoords[ii][jj][3] = (y + (ii * 32) + 30) + 32; // y2
+	}
+}
 
 

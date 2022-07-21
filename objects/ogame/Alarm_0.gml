@@ -2,6 +2,7 @@
 
 switch(room) {
 	case rmInit:
-		room_goto(rmGrid_debug); 
+		// room_goto(rmGrid_debug); 
+		room_goto(rmMinesweeper);
 		break;
 }
