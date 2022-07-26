@@ -37,32 +37,39 @@ flagsInUse = 0;
 
 totalGridSpots = 25; // 5x5, simple calculus. Doing it manually is easier but you could make it modular
 
-gridWidth = 4;
-gridHeight = 4;
+enum Grid {
+	Val = 0,
+	Show = 1,
+	Flag = 2,
+	x1 = 3,
+	y1 = 4,
+	x2 = 5,
+	y2 = 6
+};
+
+gridWidth = 8;
+gridHeight = 8;
 mineGrid[0][0] = 0;
-mineGridCoords[0][0] = 0;
 
 // Init Array based on preset height and width
 for (h = 0; h < gridHeight; h++) {
 	for (w = 0; w < gridWidth; w++) {
-		mineGrid[h][w] = 0;
-	}
-}
-
-// Init Array Coordinates based on preset height and width
-for (h = 0; h < gridHeight; h++) {
-	for (w = 0; w < gridWidth; w++) {
-		mineGridCoords[h][w] = [ 0, 0, 0, 0];
+		var _val = 0;
+		var _show = true;
+		var _flag = false;
+		var _x1 = 0, _y1 = 0;
+		var _x2 = 0, _y2 = 0;
+		mineGrid[h][w] = [ _val, _show, _flag, _x1, _y1, _x2, _y2 ]; 
 	}
 }
 
 // Populate the coordinates with the grid data
 for (var ii = 0; ii < gridWidth; ii++) {
 	for(var jj = 0; jj < gridHeight; jj++) {
-		mineGridCoords[ii][jj][0] = (x + (jj * 32)) + 32; // x1
-		mineGridCoords[ii][jj][1] = (y + (ii * 32)) + 32; // y1
-		mineGridCoords[ii][jj][2] = (x + (jj * 32) + 30) + 32; // x2
-		mineGridCoords[ii][jj][3] = (y + (ii * 32) + 30) + 32; // y2
+		mineGrid[ii][jj][Grid.x1] = (x + (jj * 32)) + 32; // x1
+		mineGrid[ii][jj][Grid.y1] = (y + (ii * 32)) + 32; // y1
+		mineGrid[ii][jj][Grid.x2] = (x + (jj * 32) + 30) + 32; // x2
+		mineGrid[ii][jj][Grid.y2] = (y + (ii * 32) + 30) + 32; // y2
 	}
 }
 
